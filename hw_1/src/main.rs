@@ -1,7 +1,7 @@
 // функция double_int32 принимает 32-х битное целое беззнаковое число и
 // возвращает 32-х битное целое беззнаковое число, равное удвоенному входному
 fn double_int32(foo: u32) -> u32 {
-    foo
+    foo * 2
 }
 
 // функция double_int64 принимает 32-х битное целое беззнаковое число и
@@ -31,7 +31,9 @@ fn int_plus_float_to_float(foo: u32, bar: f32) -> f64 {
 // функция int_plus_float_to_int принимает 32-х битное целое беззнаковое число и 32-х битное число с плавающей точкой.
 // Возвращает 64-х битное целое беззнаковое число, равное сумме входных
 fn int_plus_float_to_int(foo: u32, bar: f32) -> u64 {
-    foo as u64 + bar as u64
+    let res: f32 = foo as f32 + bar;
+
+    res as u64
 }
 
 // функция tuple_sum принимает кортеж из двух целых чисел.
@@ -45,7 +47,7 @@ fn tuple_sum(foo: (isize, isize)) -> isize {
 fn array_sum(foo: [isize; 3]) -> isize {
     let mut res: isize = 0;
 
-    for val in foo.iter() {
+    for val in foo {
         res += val
     };
 
@@ -69,7 +71,7 @@ fn main() {
     let res: f64 = int_plus_float_to_float(10, 2.3456);
     println!("5. int_plus_float_to_float res: {}", res);
 
-    let res: u64 = int_plus_float_to_int(10, 2.3456);
+    let res: u64 = int_plus_float_to_int(10, -5.0);
     println!("6. int_plus_float_to_int res: {}", res);
 
     let res: isize = tuple_sum((10, 20));
