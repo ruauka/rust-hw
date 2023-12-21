@@ -1,1 +1,0 @@
-/Users/ruauka/Desktop/rust/rust-hw/hw_2/target/debug/hw_2: /Users/ruauka/Desktop/rust/rust-hw/hw_2/src/main.rs /Users/ruauka/Desktop/rust/rust-hw/hw_2/src/practice/mod.rs /Users/ruauka/Desktop/rust/rust-hw/hw_2/src/practice/practice.rs
