@@ -130,7 +130,8 @@ pub fn uniq_digit(s: &str) -> u8 {
             }
         }
         if counter == 1 {
-            res = *i
+            res = *i;
+            break;
         }
         counter = 0;
     }

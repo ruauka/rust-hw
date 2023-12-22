@@ -19,7 +19,7 @@ fn main() {
     println!("{}", res_3);
 
     // Unique number
-    let res_4 = uniq_digit("012312");
+    let res_4 = uniq_digit("12312");
     println!("{}", res_4);
 
     // Missing Number
