@@ -1,7 +1,5 @@
 #[cfg(test)]
-use crate::practice::practice::{
-    digit_product, fib, fizzbuzz, missing_num, uniq_digit, validate_paren,
-};
+use crate::practice::{digit_product, fib, fizzbuzz, missing_num, uniq_digit, validate_paren};
 
 #[test]
 fn fizzbuzz_test() {
