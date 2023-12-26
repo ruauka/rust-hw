@@ -1,4 +1,5 @@
-use crate::dictionary::{SignedCounter, UnsignedCounter};
+pub type SignedCounter = isize;
+pub type UnsignedCounter = usize;
 
 pub fn next_signed(counter: SignedCounter) -> SignedCounter {
     counter + 1
@@ -10,6 +11,14 @@ pub fn next_unsigned(counter: UnsignedCounter) -> UnsignedCounter {
 
 pub fn prev_signed(counter: SignedCounter) -> SignedCounter {
     counter - 1
+}
+
+pub fn default_signed_counter() -> SignedCounter {
+    0
+}
+
+pub fn default_unsigned_counter() -> UnsignedCounter {
+    0
 }
 
 #[cfg(test)]
@@ -29,5 +38,15 @@ mod tests {
     #[test]
     fn test_prev_signed() {
         assert_eq!(prev_signed(1), 0);
+    }
+
+    #[test]
+    fn test_default_signed_counter() {
+        assert_eq!(default_signed_counter(), 0);
+    }
+
+    #[test]
+    fn test_default_unsigned_counter() {
+        assert_eq!(default_unsigned_counter(), 0);
     }
 }
