@@ -1,3 +1,3 @@
-mod counter;
-mod pair;
-mod vector;
+pub mod counter;
+pub mod pair;
+pub mod vector;
