@@ -34,3 +34,42 @@ pub trait Sequence {
 
     fn sum_count(&self) -> f64;
 }
+
+struct TestCase<T: Sequence> {
+    obj: T,
+    item: Item,
+    expected: f64,
+    test_name: String,
+}
+
+#[cfg(test)]
+mod tests {
+    use array::Array;
+    use tuple::Tuple;
+    use super::*;
+
+    #[test]
+    fn test_get_item() {
+        let test_cases = vec![
+            TestCase {
+                obj: Tuple::new(100, 0.0, 0.0),
+                item: Item::First,
+                expected: 100_f64,
+                test_name: "Tuple. get_item(). OK.".to_string(),
+            },
+            TestCase {
+                obj: Array::new(100.0),
+                item: Item::First,
+                expected: 100_f64,
+                test_name: "Array. get_item(). OK.".to_string(),
+            },
+        ];
+
+        for test_case in test_cases.iter() {
+            let actual: f64 = test_case.obj.get_item(test_case.item);
+            assert_eq!(test_case.expected, actual)
+        }
+
+        // expected opaque type, found a different opaque type
+    }
+}

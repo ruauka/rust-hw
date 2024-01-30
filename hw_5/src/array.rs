@@ -3,6 +3,12 @@ use crate::{Item, Sequence};
 #[derive(Debug, PartialEq)]
 pub struct Array([f64; 3]);
 
+impl Array {
+    pub fn new(value: f64) -> impl Sequence {
+        Array([value; 3])
+    }
+}
+
 impl Sequence for Array {
     fn default_values() -> Self {
         Self([0.0; 3])

@@ -3,6 +3,12 @@ use crate::{Item, Sequence};
 #[derive(Debug, PartialEq)]
 pub struct Tuple(u32, f32, f64);
 
+impl Tuple {
+    pub fn new(f1: u32, f2: f32, f3: f64) -> impl Sequence {
+        Tuple(f1, f2, f3)
+    }
+}
+
 impl Sequence for Tuple {
     fn default_values() -> Self {
         Self(0, 0.0, 0.0)
